@@ -1,1 +1,18 @@
-<p>observables works!</p>
+<div class="chapter">
+  <h2>Nos Délicieux burgers :</h2>
+  <a routerLink="/observables/burger/add">Ajouter un burger</a>
+  <div class="card-container" *ngIf="burgers$ | async as burgers; else loading">
+    <p *ngIf="lastReception">Dernière réception : {{lastReception | date: 'HH:mm'}}</p>
+    <div class="burger-card" *ngFor="let burger of burgers;">
+      <div *ngIf="!burger.available" class="available">Indisponible</div>
+      <h2>{{burger.name}}</h2>
+      <img [src]="burger.picture" [alt]="burger.name">
+      <p>{{ burger.price }}€</p>
+      <button (click)="addToCart(burger)">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>loading...</p>
+</ng-template>

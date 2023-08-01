@@ -1,7 +1,7 @@
 nav{
   height: 10vh;
   width: 100vw;
-  background-color: lightgray;
+  //background-color: lightgray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,10 @@ nav{
       list-style: none;
       a{
         text-decoration: none;
+        color: white;
+      }
+      a:visited {
+        color: white;
       }
     }
   }

@@ -13,6 +13,11 @@ import {AddBurgerComponent} from './services/add-burger/add-burger.component';
 import { DetailsBurgerComponent } from './services/detail-burger/details-burger.component';
 import {CommonModule} from "@angular/common";
 import { EditBurgerComponent } from './services/edit-burger/edit-burger.component';
+import {HttpClientModule} from "@angular/common/http";
+import {BurgerApiService} from "./observables/services/burger-api.service";
+import { AddBurgerObservableComponent } from './observables/services/add-burger-observable/add-burger-observable.component';
+import { ThermometreComponent } from './observables/components/thermometre/thermometre.component';
+import {PanierComponent} from "./observables/components/panier/panier.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,15 +29,19 @@ import { EditBurgerComponent } from './services/edit-burger/edit-burger.componen
     AddBurgerComponent,
     DetailsBurgerComponent,
     EditBurgerComponent,
+    AddBurgerObservableComponent,
+    ThermometreComponent,
+    PanierComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BurgerApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

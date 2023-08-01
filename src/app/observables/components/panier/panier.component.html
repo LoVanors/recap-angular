@@ -1,0 +1,6 @@
+<div class="burger-card" *ngFor="let burger of cart;">
+    <div *ngIf="!burger.available" class="available">Indisponible</div>
+    <h2>{{burger.name}}</h2>
+    <img [src]="burger.picture" [alt]="burger.name">
+    <p>{{ burger.price }}€</p>
+  </div>
