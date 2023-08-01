@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body,ul{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+.chapter {
+  background-color: rgb(201, 212, 226);
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
+}

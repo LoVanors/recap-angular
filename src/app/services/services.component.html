@@ -1,0 +1,22 @@
+<h1>Les Services</h1>
+<div class="chapter">
+  <button (click)="showSchem=!showSchem">Afficher Schéma</button>
+  <img *ngIf="showSchem" src="/assets/images/schemaServices.PNG">
+</div>
+<div class="chapter">
+  <h2>Nos Délicieux burgers :</h2>
+  <a routerLink="/burgers/add">Ajouter un burger</a>
+  <div class="card-container">
+    <div class="burger-card" *ngFor="let burger of burgerList">
+      <div *ngIf="!burger.available" class="available">Indisponible</div>
+      <h2>{{burger.name}}</h2>
+      <img [src]="burger.picture" [alt]="burger.name">
+      <p>{{ burger.price }}€</p>
+      <div class="buttons">
+        <button  routerLink="/burgers/{{burger.id}}">Détail 🔎</button>
+        <button routerLink="/burgers/edit/{{burger.id}}">Éditer 📝</button>
+        <button (click)="delete(burger.id)" >Supprimer ❌</button>
+      </div>
+    </div>
+  </div>
+</div>
